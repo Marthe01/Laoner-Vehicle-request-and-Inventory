@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" db_object_id="43b8b7efc35b12105ada1933e401313e" label="Loaner Vehicle Catalog" max_length="40" name="x_1538165_lva_loaner_vehicle_catalog" type="collection">
+        <element choice="1" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Unavailable" sequence="2" value="unavailable"/>
+                <element inactive_on_update="false" label="Out on Field" sequence="0" value="out_on_field"/>
+                <element inactive_on_update="false" label="Maintenance" sequence="0" value="maintenance"/>
+                <element inactive_on_update="false" label="Decommissioned" sequence="3" value="decommissioned"/>
+                <element inactive_on_update="false" label="Available" sequence="1" value="available"/>
+            </choice>
+        </element>
+        <element label="Image" max_length="40" name="image" type="user_image"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Vehicle Year" mandatory="true" max_length="40" name="vehicle_year" type="string"/>
+        <element label="Vehicle Description" mandatory="true" max_length="1000" name="vehicle_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Return Vehicle Status" max_length="40" name="return_vehicle_status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Returned with Major Issues" sequence="2" value="returned_with_major_issues"/>
+                <element inactive_on_update="false" label="Returned in Good Condition" sequence="0" value="returned_in_good_condition"/>
+                <element inactive_on_update="false" label="Returned with Minor Issues" sequence="1" value="returned_with_minor_issues"/>
+            </choice>
+        </element>
+        <element label="Vehicle Make" mandatory="true" max_length="40" name="vehicle_make" type="string"/>
+        <element label="Vehicle Model" mandatory="true" max_length="40" name="vehicle_model" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Actual Return Date" max_length="40" name="actual_return_date" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Return Notes" max_length="40" name="return_notes" type="string"/>
+        <index name="index">
+            <element name="sys_class_name"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1538165_lva_vehicle_tracker</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1538165_lva_vehicle_tracker">vehicle_status=sent_for_servicing^EQ<item display_value="Sent for Servicing" endquery="false" field="vehicle_status" goto="false" newquery="false" operator="=" or="false" value="sent_for_servicing"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Auto Create Vehicle Servicing Ticket</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+
+    // Check if an open Vehicle Servicing ticket exists for this vehicle
+    var serviceGr = new GlideRecord('x_1538165_lva_vehicle_servicing');
+    serviceGr.addQuery('vehicle_tracker', current.sys_id);
+    serviceGr.addQuery('tracker_status', 'open');
+    serviceGr.query(); // execute the query
+
+    if (!serviceGr.next()) {
+        var newService = new GlideRecord('x_1538165_lva_vehicle_servicing');
+        var serviceGd = GlideDateTime(); // Create Variable for GlideDate
+        newService.initialize(); // Initialize the creation of new record in servicing table using GlideRecord variable
+
+
+        // Populate the required fields to create new ticket
+        newService.setValue('vehicle_tracker', current.sys_id);
+        newService.setValue('vehicle', current.vehicle);
+        newService.setValue('vehicle_status', 'in_service');
+        newService.setValue('sent_for_servicing', serviceGd);
+        newService.setValue('ticket_status', 'open'); // set the value of the ticket to open
+        newService.insert(); // insert new record
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-19 20:57:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cbc7c18ec33312105ada1933e4013190</sys_id>
+        <sys_mod_count>13</sys_mod_count>
+        <sys_name>Auto Create Vehicle Servicing Ticket</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva">b215ff6bc35b12105ada1933e4013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</sys_scope>
+        <sys_update_name>sys_script_cbc7c18ec33312105ada1933e4013190</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-01 20:52:26</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=cbc7c18ec33312105ada1933e4013190"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>cbc7c18ec33312105ada1933e4013190</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-19 20:57:36</sys_created_on>
+        <sys_id>8d38014ec33312105ada1933e40131c8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-19 20:57:36</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

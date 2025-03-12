@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="3546c0b3c3db12105ada1933e401312f" sys_domain="global" table="x_1538165_lva_vehicle_tracker" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-01-31 06:07:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7946c0b3c3db12105ada1933e4013130</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1538165_lva_vehicle_tracker" name="x_1538165_lva_vehicle_tracker" sys_domain="global" view="Default view">3546c0b3c3db12105ada1933e401312f</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_1538165_lva_vehicle_tracker" sys_domain="global" view="Default view">75f5c0b3c3db12105ada1933e4013172</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-01-31 06:07:32</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-02-02 01:49:16</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c65e1d90c3e7d2105ada1933e40131e3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1538165_lva_vehicle_tracker" name="x_1538165_lva_vehicle_tracker" sys_domain="global" view="Default view">3546c0b3c3db12105ada1933e401312f</sys_ui_form>
+            <sys_ui_section caption="Return Details" display_value="Return Details" name="x_1538165_lva_vehicle_tracker" sys_domain="global" view="Default view">8e5e1d90c3e7d2105ada1933e40131e0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-02-02 01:49:16</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-02-02 01:49:17</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d25e1d90c3e7d2105ada1933e40131e7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1538165_lva_vehicle_tracker" name="x_1538165_lva_vehicle_tracker" sys_domain="global" view="Default view">3546c0b3c3db12105ada1933e401312f</sys_ui_form>
+            <sys_ui_section caption="Activity" display_value="Activity" name="x_1538165_lva_vehicle_tracker" sys_domain="global" view="Default view">c25e1d90c3e7d2105ada1933e40131e2</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-02-02 01:49:17</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1538165_lva_vehicle_tracker</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-01-31 06:07:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3546c0b3c3db12105ada1933e401312f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1538165_lva_vehicle_tracker</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva">b215ff6bc35b12105ada1933e4013123</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</sys_scope>
+            <sys_update_name>sys_ui_form_sections_3546c0b3c3db12105ada1933e401312f</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-01-31 06:07:32</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

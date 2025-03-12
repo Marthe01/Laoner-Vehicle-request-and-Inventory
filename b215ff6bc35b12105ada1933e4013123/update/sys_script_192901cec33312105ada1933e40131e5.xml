@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1538165_lva_vehicle_servicing</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1538165_lva_vehicle_servicing">ticket_status=closed^vehicle_statusINdecommissioned,returned_to_warehouse^EQ<item display_value="Closed" endquery="false" field="ticket_status" goto="false" newquery="false" operator="=" or="false" value="closed"/>
+            <item display_value="decommissioned,returned_to_warehouse" endquery="false" field="vehicle_status" goto="false" newquery="false" operator="IN" or="false" value="decommissioned,returned_to_warehouse"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Update Vehicle Tracker-Servicing Closed</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+
+    var vehicleTracker = current.vehicle_tracker;
+    if (vehicleTracker) {
+        var vehicleTrackerGr = new GlideRecord('x_1538165_lva_vehicle_tracker');
+        if (vehicleTrackerGr.get(vehicleTracker)) {
+            vehicleTrackerGr.setValue('vehicle_status', current.vehicle_status);
+			vehicleTrackerGr.setValue('ticket_status', 'closed'); // Match vehicle status
+			vehicleTrackerGr.update();
+        }
+
+        
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-19 21:04:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>192901cec33312105ada1933e40131e5</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Update Vehicle Tracker-Servicing Closed</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva">b215ff6bc35b12105ada1933e4013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</sys_scope>
+        <sys_update_name>sys_script_192901cec33312105ada1933e40131e5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-07 12:57:13</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=192901cec33312105ada1933e40131e5"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>192901cec33312105ada1933e40131e5</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-19 21:04:40</sys_created_on>
+        <sys_id>28d9c1cec33312105ada1933e40131d0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-19 21:04:40</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

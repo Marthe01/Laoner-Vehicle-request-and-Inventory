@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="catalog_script_client">
+    <catalog_script_client action="DELETE">
+        <active>true</active>
+        <applies_catalog>true</applies_catalog>
+        <applies_extended>false</applies_extended>
+        <applies_req_item>false</applies_req_item>
+        <applies_sc_task>false</applies_sc_task>
+        <applies_target_record>false</applies_target_record>
+        <applies_to>item</applies_to>
+        <cat_item display_value="Request Loaner Vehicle">b13b5a68c3af16105ada1933e40131cf</cat_item>
+        <cat_variable>IO:0866aea4c3ef16105ada1933e40131cc</cat_variable>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto Populate Office Location </name>
+        <order/>
+        <published_ref/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+   //Type appropriate comment here, and begin script below
+(function executeRule(current, gForm, gS) {
+    var userID = gForm.getValue('user'); // Get selected user
+
+    if (userID) {
+        var userRecord = new GlideRecord('sys_user'); // Query User table
+        if (userRecord.get(userID)) {
+            var location = userRecord.getValue('location'); // Get User's location
+            gForm.setValue('office_location', location); // Set Office Location field
+        }
+    }
+})(current, gForm, gS);
+
+   
+}]]></script>
+        <sys_class_name>catalog_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 19:52:59</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4620f065c36b52105ada1933e401318a</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Auto Populate Office Location </sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva">b215ff6bc35b12105ada1933e4013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</sys_scope>
+        <sys_update_name>catalog_script_client_4620f065c36b52105ada1933e401318a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 21:01:24</sys_updated_on>
+        <table/>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <va_supported>true</va_supported>
+        <variable_set/>
+        <view/>
+    </catalog_script_client>
+    <sys_es_latest_script action="DELETE">
+        <id>4620f065c36b52105ada1933e401318a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 19:52:58</sys_created_on>
+        <sys_id>4a2378a5c36b52105ada1933e401319f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 19:52:58</sys_updated_on>
+        <table>catalog_script_client</table>
+        <use_es_latest>false</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</application>
+        <file_path/>
+        <instance_id>62e8574aeb4e92583a48f459bad0cd66</instance_id>
+        <instance_name>dev291532</instance_name>
+        <name>catalog_script_client_4620f065c36b52105ada1933e401318a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Request Loaner Vehicle"&gt;b13b5a68c3af16105ada1933e40131cf&lt;/cat_item&gt;&lt;cat_variable&gt;IO:0866aea4c3ef16105ada1933e40131cc&lt;/cat_variable&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Auto Populate Office Location &lt;/name&gt;&lt;order/&gt;&lt;published_ref/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+
+   //Type appropriate comment here, and begin script below
+(function executeRule(current, gForm, gS) {
+    var userID = gForm.getValue('user'); // Get selected user
+
+    if (userID) {
+        var userRecord = new GlideRecord('sys_user'); // Query User table
+        if (userRecord.get(userID)) {
+            var location = userRecord.getValue('location'); // Get User's location
+            gForm.setValue('office_location', location); // Set Office Location field
+        }
+    }
+})(current, gForm, gS);
+
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-05 19:52:59&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;4620f065c36b52105ada1933e401318a&lt;/sys_id&gt;&lt;sys_mod_count&gt;6&lt;/sys_mod_count&gt;&lt;sys_name&gt;Auto Populate Office Location &lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva"&gt;b215ff6bc35b12105ada1933e4013123&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Loaner Vehicle Request and Inventory"&gt;b215ff6bc35b12105ada1933e4013123&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_4620f065c36b52105ada1933e401318a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-05 21:01:24&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;va_supported&gt;true&lt;/va_supported&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;4620f065c36b52105ada1933e401318a&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-05 19:52:58&lt;/sys_created_on&gt;&lt;sys_id&gt;4a2378a5c36b52105ada1933e401319f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-05 19:52:58&lt;/sys_updated_on&gt;&lt;table&gt;catalog_script_client&lt;/table&gt;&lt;use_es_latest&gt;false&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>627651950</payload_hash>
+        <record_name>Auto Populate Office Location </record_name>
+        <reverted_from/>
+        <source>3b273b6fc35b12105ada1933e4013147</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-05 21:01:24</sys_created_on>
+        <sys_id>58d2c16dc3ab52105ada1933e401318d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194d7eaeb390000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 21:01:24</sys_updated_on>
+        <type>Catalog Client Scripts</type>
+        <update_guid>10d2c16d3dab5210455fe2c58e4cda8d</update_guid>
+        <update_guid_history>10d2c16d3dab5210455fe2c58e4cda8d:627651950,798df0a50dab521076f338627f00a4af:1731003884,7afc30a5f1ab5210b7d4a2e52a8426bd:2028079059,e6d9f461abab52107c1b1582048e29d8:639561644,02a8382115ab52100f4519b732103552:1904627311,b6a5b4e9dd6b52109b6a6d320d74920b:-764425495,9623bc29386b52109c1c1341c96fe95c:-365015308</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Auto Populate Office Location ">ebdd65b5c3af92105ada1933e4013139</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-06 18:47:58</sys_created_on>
+        <sys_db_object display_value="" name="catalog_script_client">catalog_script_client</sys_db_object>
+        <sys_id>a03084920ba64944ad08ac189eab4bc1</sys_id>
+        <sys_metadata>4620f065c36b52105ada1933e401318a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Auto Populate Office Location </sys_name>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva">b215ff6bc35b12105ada1933e4013123</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</sys_scope>
+        <sys_scope_delete display_value="">5ad0a0d6cf5743f4a199bc592fc90a71</sys_scope_delete>
+        <sys_update_name>catalog_script_client_4620f065c36b52105ada1933e401318a</sys_update_name>
+        <sys_update_version display_value="catalog_script_client_4620f065c36b52105ada1933e401318a">58d2c16dc3ab52105ada1933e401318d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-06 18:47:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

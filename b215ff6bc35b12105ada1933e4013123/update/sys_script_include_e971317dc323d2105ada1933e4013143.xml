@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1538165_lva.GetUserLocation</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GetUserLocation</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GetUserLocation = Class.create();
+GetUserLocation.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    
+    GetUserLocation: function() {
+        var userid = this.getParameter('sysparm_user_sysid'); // Get user ID from client
+        var location = '';
+
+        var gr = new GlideRecord('sys_user');
+        gr.addQuery('sys_id', userid);
+        gr.query();
+         
+            if (gr.next()) {
+                location = gr.getValue('location'); // Get Office Location
+            }
+        
+        
+        return location; // Return location or empty if not found
+    }
+
+});
+
+
+
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-06 19:12:09</sys_created_on>
+        <sys_id>e971317dc323d2105ada1933e4013143</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>GetUserLocation</sys_name>
+        <sys_package display_value="Loaner Vehicle Request and Inventory" source="x_1538165_lva">b215ff6bc35b12105ada1933e4013123</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Vehicle Request and Inventory">b215ff6bc35b12105ada1933e4013123</sys_scope>
+        <sys_update_name>sys_script_include_e971317dc323d2105ada1933e4013143</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-10 01:55:49</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>e971317dc323d2105ada1933e4013143</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-06 19:12:07</sys_created_on>
+        <sys_id>996339fdc323d2105ada1933e40131f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-06 19:12:07</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
